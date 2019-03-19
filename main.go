@@ -68,13 +68,19 @@ func CopyFile(sourcePath string, targetPath string) error {
 		if !os.IsNotExist(err) {
 			return err
 		}
-	} else {
-		if !targetFInfo.Mode().IsRegular() {
+	} else if !targetFInfo.Mode().IsRegular() {
+		if targetFInfo.IsDir() {
+			err := os.RemoveAll(targetPath)
+			if err != nil {
+				return err
+			}
+		} else {
 			fmt.Errorf(
 				"CopyFile: non-regular destination file %s (%q)",
 				targetFInfo.Name(),
 				targetFInfo.Mode().String(),
 			)
+			return nil
 		}
 	}
 	if os.SameFile(sourceFInfo, targetFInfo) {
