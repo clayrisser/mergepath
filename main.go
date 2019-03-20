@@ -1,4 +1,4 @@
-package mergedir
+package mergepath
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-func MergeDirectories(sourceDir string, targetDir string) error {
+func MergePaths(sourceDir string, targetDir string) error {
 	err := filepath.Walk(
 		sourceDir,
 		func(

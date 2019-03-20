@@ -1,6 +1,6 @@
-# mergedir
+# mergepath
 
-[![GitHub stars](https://img.shields.io/github/stars/codejamninja/mergedir.svg?style=social&label=Stars)](https://github.com/codejamninja/mergedir)
+[![GitHub stars](https://img.shields.io/github/stars/codejamninja/mergepath.svg?style=social&label=Stars)](https://github.com/codejamninja/mergepath)
 
 > golang library to merge directories
 
@@ -18,7 +18,7 @@ Please ★ this repo if you found it useful ★ ★ ★
 ## Installation
 
 ```sh
-go get github.com/codejamninja/mergedir
+go get github.com/codejamninja/mergepath
 ```
 
 
@@ -29,34 +29,34 @@ go get github.com/codejamninja/mergedir
 
 ## Usage
 
-[Contribute](https://github.com/codejamninja/mergedir/blob/master/CONTRIBUTING.md) usage docs
+[Contribute](https://github.com/codejamninja/mergepath/blob/master/CONTRIBUTING.md) usage docs
 
 
 ## Support
 
-Submit an [issue](https://github.com/codejamninja/mergedir/issues/new)
+Submit an [issue](https://github.com/codejamninja/mergepath/issues/new)
 
 
 ## Screenshots
 
-[Contribute](https://github.com/codejamninja/mergedir/blob/master/CONTRIBUTING.md) a screenshot
+[Contribute](https://github.com/codejamninja/mergepath/blob/master/CONTRIBUTING.md) a screenshot
 
 
 ## Contributing
 
-Review the [guidelines for contributing](https://github.com/codejamninja/mergedir/blob/master/CONTRIBUTING.md)
+Review the [guidelines for contributing](https://github.com/codejamninja/mergepath/blob/master/CONTRIBUTING.md)
 
 
 ## License
 
-[MIT License](https://github.com/codejamninja/mergedir/blob/master/LICENSE)
+[MIT License](https://github.com/codejamninja/mergepath/blob/master/LICENSE)
 
 [Jam Risser](https://codejam.ninja) © 2019
 
 
 ## Changelog
 
-Review the [changelog](https://github.com/codejamninja/mergedir/blob/master/CHANGELOG.md)
+Review the [changelog](https://github.com/codejamninja/mergepath/blob/master/CHANGELOG.md)
 
 
 ## Credits
