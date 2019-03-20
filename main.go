@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func MergePaths(sourceDir string, targetDir string) error {
@@ -19,7 +20,7 @@ func MergePaths(sourceDir string, targetDir string) error {
 			if err != nil {
 				return err
 			}
-			targetPath := targetDir + sharedPath
+			targetPath := strings.ReplaceAll(targetDir+"/"+sharedPath, "//", "/")
 			if sourceFInfo.IsDir() {
 				targetFInfo, err := os.Stat(targetPath)
 				if err != nil {
