@@ -8,19 +8,43 @@ import (
 	"strings"
 )
 
-func MergePaths(sourceDir string, targetDir string) error {
-	err := filepath.Walk(
-		sourceDir,
+func MergePaths(rootSourcePath string, rootTargetPath string) error {
+	rootSourceFInfo, err := os.Stat(rootSourcePath)
+	if err != nil {
+		return err
+	}
+	if !rootSourceFInfo.IsDir() {
+		err = CopyFile(rootSourcePath, rootTargetPath)
+		if err != nil {
+			return err
+		}
+		return nil
+	}
+	rootTargetFInfo, err := os.Stat(rootTargetPath)
+	if err != nil {
+		if !os.IsNotExist(err) {
+			return err
+		}
+	} else {
+		if !rootTargetFInfo.IsDir() {
+			err = os.Remove(rootTargetPath)
+			if err != nil {
+				return err
+			}
+		}
+	}
+	err = filepath.Walk(
+		rootSourcePath,
 		func(
 			sourcePath string,
 			sourceFInfo os.FileInfo,
 			err error,
 		) error {
-			sharedPath := sourcePath[len(sourceDir):]
+			sharedPath := sourcePath[len(rootSourcePath):]
 			if err != nil {
 				return err
 			}
-			targetPath := strings.ReplaceAll(targetDir+"/"+sharedPath, "//", "/")
+			targetPath := strings.ReplaceAll(rootTargetPath+"/"+sharedPath, "//", "/")
 			if sourceFInfo.IsDir() {
 				targetFInfo, err := os.Stat(targetPath)
 				if err != nil {
