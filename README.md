@@ -4,6 +4,8 @@
 
 > golang library to merge directories
 
+![](assets/mergepath.png)
+
 Please ★ this repo if you found it useful ★ ★ ★
 
 
